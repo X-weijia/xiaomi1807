@@ -78,9 +78,11 @@ body{
     font-size: 14px;
     float: right;
     line-height: 40px;
+
 }
 .car:hover{
     background: white;
+
 }
 .header_right a{
     text-decoration:none;
@@ -96,6 +98,17 @@ body{
 }
 .car:hover span{
     color: #ff6700;
+}
+.shopCar{
+    width: 319px;
+    height: 0;
+    background: #fff;
+    position: absolute;
+    right: 60px;
+    top: 40px;
+    z-index: 999;
+    overflow: hidden;
+    transition: all .3s .1s linear;
 }
 /*头部结束*/
 /*导航开始*/
@@ -172,18 +185,6 @@ body{
     margin: 0 auto;
     position: relative;
 }
-.imgbox{
-    width: 100%;
-    height: 100%;
-    /*position: relative;*/
-}
-.img img{
-    width: 1226px;
-    height: 460px;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
 .pull_left{
     width: 41px;
     height: 69px;
@@ -194,22 +195,25 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     background: url("../img/pull.png") no-repeat -83px;
+    z-index: 15;
+    cursor: pointer;
 }
 .pull_left:hover{
     background: url("../img/pull.png") no-repeat 0;
 }
-
 .pull_right{
     width: 41px;
     height: 69px;
     position: absolute;
     right: 0;
-    background-color: black;
+    /*background-color: black;*/
     top: 0;
     bottom: 0;
     margin-top: auto;
     margin-bottom: auto;
     background: url("../img/pull.png") no-repeat -125px;
+    z-index: 15;
+    cursor: pointer;
 }
 .pull_right:hover{
     background: url("../img/pull.png") no-repeat -42px;
@@ -221,17 +225,22 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 999;
     background-color: rgba(0,0,0,0.6);
 }
 .banner_left li{
     width: 234px;
     height: 43px;
+    cursor: pointer;
 }
 .banner_left li:first-child{
     margin-top: 20px;
 }
 .side_list{
+    width: 234px;
+    height: 43px;
     text-decoration: none;
+
 }
 .banner_left li:hover{
     background: #ff6700;
@@ -243,6 +252,16 @@ body{
     line-height:43px;
     margin-left: 30px;
 }
+.sideCh{
+    width: 992px;
+    height: 460px;
+    background: pink;
+    position: absolute;
+    left: 234px;
+    top: 0;
+    z-index: 999;
+    display: none;
+}
 .gt{
     font-size: 20px;
     font-weight: bold;
@@ -251,6 +270,19 @@ body{
     margin-right: 24px;
     line-height: 43px;
 }
+.imgbox{
+    width: 100%;
+    height: 100%;
+    /*position: relative;*/
+}
+.img img{
+    width: 1226px;
+    height: 460px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
 .five_point{
     width: 110px;
     height: 12px;
@@ -258,6 +290,7 @@ body{
     position: absolute;
     right: 35px;
     bottom: 25px;
+    z-index: 15;
 }
 .point{
     list-style: none;
@@ -268,12 +301,12 @@ body{
     border-radius: 50%;
     float: left;
     margin-right: 10px;
+    cursor: pointer;
 }
-.five_point :nth-child(5){
-    margin-right: 0;
-    background: #f8efe2;
-    border: 2px solid #958f88;
-}
+.point:hover{
+    background:#f8efe2;
+    border:2px solid #958f88;
+ }
 .home_main{
     width: 1226px;
     height: 170px;
@@ -367,7 +400,7 @@ body{
     float: left;
 }
 .home1_right1:last-child{
-    margin-right: 0px;
+    margin-right: 0;
 }
 .home1 a{
     text-decoration: none;
@@ -643,7 +676,7 @@ h4{
     width: 234px;
     height: 614px;
     float: left;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .gamephone:hover{
     transform: translateY(-4px);
@@ -662,7 +695,7 @@ h4{
     float: left;
     margin-right: 14px;
     margin-bottom: 14px;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .miphone_list:hover{
     transform: translateY(-4px);
@@ -732,6 +765,7 @@ h4{
     height: 673px;
     margin: 0 auto;
     margin-top: 42px;
+    position: relative;
 }
 .house_top{
     width: 100%;
@@ -770,6 +804,7 @@ h4{
 .house_top_right :last-child{
     margin-right: 0;
 }
+
 .robot{
     width: 234px;
     height: 614px;
@@ -783,18 +818,33 @@ h4{
 }
 .robot1{
     margin-bottom: 14px;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .robot1:hover{
     transform: translateY(-4px);
     box-shadow: 0 4px 10px 2px rgba(0,0,0,0.3);
 }
 .robot2{
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .robot2:hover{
     transform: translateY(-4px);
     box-shadow: 0 4px 10px 2px rgba(0,0,0,0.3);
+}
+.house_case{
+    width: 1226px;
+    height: 628px;
+    background: #f5f5f5;
+    position: relative;
+}
+.sectionBox{
+    width: 978px;
+    height: 628px;
+    background: pink;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
 }
 .electric{
     width: 978px;
@@ -811,7 +861,7 @@ h4{
     margin-bottom: 14px;
     position: relative;
     overflow: hidden;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .move_up{
     width: 234px;
@@ -819,7 +869,7 @@ h4{
     background: #ff6700;
     position: absolute;
     bottom: -76px;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .electric_list:hover{
     transform: translateY(-4px);
@@ -882,7 +932,7 @@ h4{
     width: 234px;
     height: 143px;
     background: white;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .last_house:hover{
     transform: translateY(-4px);
@@ -980,7 +1030,7 @@ h4{
     background: white;
     float: left;
     margin-right: 14px;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .li:hover{
     transform: translateY(-4px);
@@ -1032,7 +1082,7 @@ h4{
     background: #fff;
     float: left;
     margin-right: 14px;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .review_item:hover{
     transform: translateY(-4px);
@@ -1123,7 +1173,7 @@ h4{
     float: left;
     border-top: 1px solid #ff6700;
     overflow: hidden;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
 }
 .content1:hover{
     transform: translateY(-4px);
@@ -1292,7 +1342,7 @@ h4{
     float: left;
     margin-right: 14px;
     overflow: hidden;
-    transition: all,1s,.6s,linear;
+    transition: all .3s .1s linear;
     position: relative;
 
 }
