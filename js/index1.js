@@ -91,8 +91,12 @@ window.onload=function () {
         }
         for (let i=0;i<img.length;i++){
             img[i].style.zIndex="5";
+            point[i].style.background="";
+            point[i].style.border="";
         }
         img[num].style.zIndex="10";
+        point[num].style.background="#f8efe2";
+        point[num].style.border="2px solid #958f88";
     }
     //点击小点切换图片
     let point = document.getElementsByClassName("point");
