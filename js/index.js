@@ -11,7 +11,7 @@ $(function(){
     let n_box = $(".nav_b");
     n_list.hover(function (){
         let index1 = $(this).index();
-        n_box.eq(index1).css({"height":"235px","zIndex":"200"});
+        n_box.css({"height":"235px","z-index":"50"}).eq(index1).css({"height":"235px","z-index":"100"});
     },function (){  
         n_box.css("height","0");    
     })
@@ -25,7 +25,6 @@ $(function(){
         let index = $(this).index();
         sideCh.eq(index).css("display","none");
     })
-    /////////////////////////     banner轮播图     /////////////////////////////////////
     /////////////////////////     banner轮播图     /////////////////////////////////////
     let banner = $(".banner");
     let img = $(".img");

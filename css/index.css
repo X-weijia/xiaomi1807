@@ -177,7 +177,7 @@ body{
     background:white;   
     /* box-shadow:0 5px 6px 1px rgba(0,0,0,0.4); */
     /* display: none; */
-    z-index: 100;
+    z-index: 50;
     transition: all 0.3s linear;
     overflow: hidden;
 }
