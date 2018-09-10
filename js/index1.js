@@ -23,9 +23,24 @@ window.onload=function () {
         }
     }
 
-
-
-    ///////////////////////////家电选项卡/////////////////////////////////////////////
+    ////////////////////////   导航栏选项   //////////////////////////////////////////
+    let n_list = document.querySelectorAll(".nav_list .n_b");
+    let n_box = document.querySelectorAll(".nav_b");
+    n_list.forEach((v,i)=>{
+        v.onmouseenter = function (){
+            n_box.forEach((v)=>{
+                v.style.height = "235px";
+                v.style.zIndex = "100";
+            })
+            n_box[i].style.zIndex = "200";
+        }
+        v.onmouseleave = function (){
+            n_box.forEach((k)=>{
+                k.style.height = "0";
+            })
+        }
+    })
+    ///////////////////////    家电选项卡   //////////////////////////////////////////////
     function house(name,hr,Box){                //选项卡封装
     let jiadian = document.getElementsByClassName(name)[0];
     let top_right = jiadian.getElementsByClassName(hr)[0];
@@ -49,7 +64,7 @@ window.onload=function () {
     house("peijian","hr4","Box4");
     house("zhoubian","hr5","Box5");
 
-    ///////////////////////////////banner轮播图/////////////////////////////////////////////
+    /////////////////////////     banner轮播图     /////////////////////////////////////
     let banner = document.getElementsByClassName("banner")[0];
     let imgbox = document.getElementsByClassName("imgbox")[0];
     let img = imgbox.getElementsByTagName("img");
@@ -114,8 +129,8 @@ window.onload=function () {
         }
     }
 
-    //////////////////////内容部分轮播   获取元素///////////////////////////////////////
-    function wheel(screen_w,imgs,points,left,right) {      //封装轮播函数
+/////////////////////////////   内容部分轮播   获取元素   ///////////////////////////////
+    function wheel(screen_w,imgs,points,left,right,Now,Next) {      //封装轮播函数
         let bigBox = document.querySelector(screen_w);
         let width = parseInt(getComputedStyle(bigBox, null).width);
 
@@ -124,7 +139,9 @@ window.onload=function () {
         let Right = document.querySelector(right);
         // console.log(bigBox,width,books,Left,Right);
         //点击左右切换
-        let now = next = 0;
+        // let now = next = 0;
+        let now = Now;
+        let next = Next;
         let flag;
 
         Right.onclick = function () {
@@ -195,9 +212,120 @@ window.onload=function () {
             }
         })
     }
-    wheel(".one",".one li",".s_point1 span",".conL1",".conR1");
-    wheel(".two",".two li",".s_point2 span",".conL2",".conR2");
-    wheel(".three",".three li",".s_point3 span",".conL3",".conR3");
-    wheel(".four",".four li",".s_point4 span",".conL4",".conR4");
+    wheel(".one",".one li",".s_point1 span",".conL1",".conR1",0,0);
+    wheel(".two",".two li",".s_point2 span",".conL2",".conR2",0,0);
+    wheel(".three",".three li",".s_point3 span",".conL3",".conR3",0,0);
+    wheel(".four",".four li",".s_point4 span",".conL4",".conR4",0,0);
+//////////////////////////////   为您推荐   ///////////////////////////////////////////
+
+function choice_t(rc,lc,ul){                   //封装内容滚动函数
+    let t_right = document.querySelector(rc);
+    let t_left = document.querySelector(lc);
+    let t_Box = document.querySelector(ul);
+    let t_width = parseInt(getComputedStyle(t_Box,null).width)/3;
+    // console.log(t_width);
+    t_right.onmouseenter=function(){
+        t_right.classList.add("choice1");
+    }
+    t_right.onmouseleave=function(){
+        t_right.classList.remove("choice1");
+    }
+        t_left.onmouseenter=function(){
+            t_left.classList.add("choice1");
+        }
+        t_left.onmouseleave=function(){
+            t_left.classList.remove("choice1");
+        }
+
+    let t_times=0;
+    t_right.onclick=function(){
+        t_times++;
+        if (t_times==3) {
+            t_times=2;  
+        }
+        t_Box.style.transform="translateX("+(-t_width*t_times)+"px)";
+    }
+    t_left.onclick=function(){
+        t_times--;
+        if (t_times==-1) {
+            t_times=0;  
+        }
+        t_Box.style.transform="translateX("+(-t_width*t_times)+"px)";
+    }
+}
+choice_t(".tr_choice",".tl_choice",".fy_push");
+choice_t(".rr_choice",".rl_choice",".hot_list");
+
+
+
+
+
+
+
+////////////////////////////////   小米闪购    ///////////////////////////////////////
+    let s_right = document.querySelector(".sr_choice");
+    let s_left = document.querySelector(".sl_choice");
+    let s_Box = document.querySelector(".l_buy ul");
+    let s_width = parseInt(getComputedStyle(s_Box,null).width)/9;
+    // console.log(s_right,s_width);
+    let s_times = 0;
+    let x = 4;
+    s_right.onclick=function(){
+        s_times++;
+        if (s_times==2) {
+            s_times=2;
+            x=5;
+            s_Box.style.transform="translateX("+(-s_width*x)+"px)";
+        }else if (s_times==1) {
+            x=4;
+            s_Box.style.transform="translateX("+(-s_width*x)+"px)";
+        }
+        
+    }
+    s_left.onclick=function(){
+        s_times--;
+        if (s_times==0) {
+            s_times=0;
+            x=0;
+            s_Box.style.transform="translateX("+(-s_width*x)+"px)";
+        }else if (s_times==1) {
+            x=4;
+            s_Box.style.transform="translateX("+(-s_width*x)+"px)";
+        }
+       
+    }
+
+///////////////////////////////////   返回顶部    /////////////////////////////////////////////
+
+let t_top = document.querySelector(".fixed_bottom");
+let t_wh = window.innerHeight;
+
+window.onscroll=function(){
+    let t_sh = document.body.scrollTop||document.documentElement.scrollTop;
+    if (t_sh >= t_wh+300) {
+        t_top.style.display="block";
+    }
+    if (t_sh <= t_wh+300) {
+        t_top.style.display="none";
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

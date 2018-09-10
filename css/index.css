@@ -137,18 +137,113 @@ body{
     float: left;
     margin-left: 189px;
 }
-.nav_list li{
+.nav_list a{
+    color: #000;
+    text-decoration: none;
+}
+.nav_list .n_b{
+    height: 100%;
     float: left;
     font-size: 16px;
     color: #333333;
-    margin-top: 42px;
-    margin-right: 20px;
+    /* margin-top: 42px; */
+    padding-right: 20px;
+    line-height:100px;
+    
+}
+.nav_list li{
+    height: 100%;
+    float: left;
+    font-size: 16px;
+    color: #333333;
+    /* margin-top: 42px; */
+    padding-right: 20px;
+    line-height: 100px;
 }
 .nav_list .last{
-    margin-right: 0;
+    padding-right: 0;
 }
-.nav_list li:hover{
+.nav_list a:hover{
     color: #ff6700;
+}
+.nav_b{
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #E0E0E0;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    line-height: 100%;
+    background:white;   
+    /* box-shadow:0 5px 6px 1px rgba(0,0,0,0.4); */
+    /* display: none; */
+    z-index: 100;
+    transition: all 0.3s linear;
+    overflow: hidden;
+}
+.nav_b ul{
+    width: 1226px;
+    height: 230px;
+    margin: 0 auto;
+    position: relative;
+}
+.nav_b ul li{
+    width: 203px;
+    height: 230px;
+    padding: 0;
+}
+.n_line{
+    width: 1px;
+    height: 100px;
+    background: #e0e0e0;
+    position: absolute;
+    top: 45px;
+    left: 203px;
+}
+.n_line:nth-child(2){
+    left: 407px;
+}
+.n_line:nth-child(4){
+    left: 815px;
+}
+.n_line3{
+    width: 1px;
+    height: 100px;
+    background: #e0e0e0;
+    position: absolute;
+    top: 45px;
+    left: 611px;
+}
+.n_line5{
+    width: 1px;
+    height: 100px;
+    background: #e0e0e0;
+    position: absolute;
+    top: 45px;
+    left: 1019px;
+}
+.nav_b ul li img{
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 50px auto 15px;
+}
+.nav_b ul li h3{
+    width: 203px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: #222;
+    font-size: 12px;
+    font-weight: 400;
+}
+.nav_b ul li p{
+    width: 203px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: #ff6700;
+    font-size: 10px;
 }
 .search{
     width: 297px;
@@ -227,7 +322,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 35;
     background-color: rgba(0,0,0,0.6);
 }
 .banner_left li{
@@ -242,7 +337,6 @@ body{
     width: 234px;
     height: 43px;
     text-decoration: none;
-
 }
 .banner_left .LT:hover{
     background: #ff6700;
@@ -305,13 +399,21 @@ body{
     height: 100%;
     /*position: relative;*/
 }
-.img img{
+.img{
     width: 1226px;
     height: 460px;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 5;
+}
+.img img{
+    width: 1226px;
+    height: 460px;
+    /* position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5; */
 }
 .five_point{
     width: 110px;
@@ -334,6 +436,10 @@ body{
     cursor: pointer;
 }
 .point:hover{
+    background:#f8efe2;
+    border:2px solid #958f88;
+ }
+ .p_t{
     background:#f8efe2;
     border:2px solid #958f88;
  }
@@ -487,7 +593,7 @@ body{
     float: right;
     margin-top: 25px;
 }
-.buy  .choice{
+.buy .sl_choice{
     width: 34px;
     height: 22px;
     background: white;
@@ -497,6 +603,19 @@ body{
     text-align: center;
     line-height: 22px;
     color: #e5e2e0;
+    cursor: pointer;
+}
+.buy .sr_choice{
+    width: 34px;
+    height: 22px;
+    background: white;
+    float: left;
+    border: 1px solid #e0e0e0;
+    font-weight: bold;
+    text-align: center;
+    line-height: 22px;
+    color: #e5e2e0;
+    cursor: pointer;
 }
 .buy  .choice1{
     border-left: none;
@@ -561,6 +680,17 @@ body{
     font-size: 22px;
     text-align: center;
     line-height: 46px;
+}
+.l_buy{
+    width:978px;
+    height: 339px;
+    float: right;
+    overflow: hidden;
+}
+.l_buy ul{
+    width: 2232px;
+    height: 339px;
+    transition: all 1s linear;
 }
 .li2{
     width: 234px;
@@ -645,6 +775,7 @@ h4{
     background: #fafafa;
     border-top: 1px solid #e53935;
     float: left;
+    margin-right: 14px;
 }
 .glasses img{
     display: block;
@@ -1030,7 +1161,7 @@ h4{
     height: 24px;
     margin-top: 20px;
 }
-.choice{
+.tl_choice{
     width: 34px;
     height: 22px;
     background: #f5f5f5;
@@ -1040,15 +1171,38 @@ h4{
     text-align: center;
     line-height: 22px;
     color: #e5e2e0;
+    cursor: pointer;
+}
+.tr_choice{
+    width: 34px;
+    height: 22px;
+    background: #f5f5f5;
+    float: left;
+    border: 1px solid #e0e0e0;
+    font-weight: bold;
+    text-align: center;
+    line-height: 22px;
+    color: #e5e2e0;
+    cursor: pointer;
+    border-left: none;
 }
 .choice1{
-    border-left: none;
-    color: #b0b4bd;
+    color: #ff6700;
+}
+.o_box{
+    width: 1230px;
+    height: 350px;
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-top: 10px;
+    margin-top: -10px;
+    overflow: hidden;
 }
 .fy_push{
-    width: 1226px;
+    width: 3720px;
     height: 339px;
     background: #f5f5f5;
+    transition: all 1s linear;
 }
 .li{
     width: 234px;
@@ -1101,6 +1255,49 @@ h4{
     height: 473px;
     background: #f5f5f5;
     margin: 0 auto;
+}
+.rl_choice{
+    width: 34px;
+    height: 22px;
+    background: #f5f5f5;
+    float: left;
+    border: 1px solid #e0e0e0;
+    font-weight: bold;
+    text-align: center;
+    line-height: 22px;
+    color: #e5e2e0;
+    cursor: pointer;
+}
+.rr_choice{
+    width: 34px;
+    height: 22px;
+    background: #f5f5f5;
+    float: left;
+    border: 1px solid #e0e0e0;
+    font-weight: bold;
+    text-align: center;
+    line-height: 22px;
+    color: #e5e2e0;
+    cursor: pointer;
+    border-left: none;
+}
+.choice1{
+    color: #ff6700;
+}
+.r_box{
+    width: 1240px;
+    height: 430px;
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-top: 10px;
+    margin-top: -10px;
+    overflow: hidden;
+}
+.hot_list{
+    width: 3720px;
+    height: 415px;
+    background: #f5f5f5;
+    transition: all 1s linear;
 }
 .review_item{
     width: 296px;
@@ -1645,6 +1842,8 @@ h4{
     height: 39px;
     background: white;
     margin-top: 16px;
+    cursor: pointer;
+    display: none;
 }
 .icon-geren11{
     display: block;
@@ -1674,6 +1873,7 @@ h4{
     display: block;
     margin-left: 4px;
     line-height: 39px;
+    color: #bbb;
 }
 /*尾部*/
 .repair{
