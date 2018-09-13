@@ -615,10 +615,10 @@ body{
     text-align: center;
     line-height: 22px;
     color: #e5e2e0;
+    border-left: none;
     cursor: pointer;
 }
 .buy  .choice1{
-    border-left: none;
     color: #b0b4bd;
 }
 .push{

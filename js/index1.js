@@ -42,11 +42,10 @@ window.onload=function () {
     })
     ///////////////////////    家电选项卡   //////////////////////////////////////////////
     function house(name,hr,Box){                //选项卡封装
-    let jiadian = document.getElementsByClassName(name)[0];
-    let top_right = jiadian.getElementsByClassName(hr)[0];
-
-    let r_list = top_right.getElementsByClassName("r_list");
-    let sectionBox = document.getElementsByClassName(Box);
+    let jiadian = document.querySelector(name);
+    let top_right = jiadian.querySelector(hr);
+    let r_list = top_right.querySelectorAll("r_list");
+    let sectionBox = document.querySelectorAll(Box);
     for (let i = 0;i< r_list.length;i++) {
         r_list[i].onmouseenter=function () {
             for (let j = 0;j< r_list.length;j++){
@@ -218,7 +217,7 @@ window.onload=function () {
     wheel(".four",".four li",".s_point4 span",".conL4",".conR4",0,0);
 //////////////////////////////   为您推荐   ///////////////////////////////////////////
 
-function choice_t(rc,lc,ul){                   //封装内容滚动函数
+function choice_t(rc,lc,ul){                   //封装滚动函数
     let t_right = document.querySelector(rc);
     let t_left = document.querySelector(lc);
     let t_Box = document.querySelector(ul);
@@ -255,13 +254,6 @@ function choice_t(rc,lc,ul){                   //封装内容滚动函数
 }
 choice_t(".tr_choice",".tl_choice",".fy_push");
 choice_t(".rr_choice",".rl_choice",".hot_list");
-
-
-
-
-
-
-
 ////////////////////////////////   小米闪购    ///////////////////////////////////////
     let s_right = document.querySelector(".sr_choice");
     let s_left = document.querySelector(".sl_choice");
